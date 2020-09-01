@@ -9,6 +9,16 @@ const {
 
 
 //Start the Client
-const { client } = require('discord.js')
-const { token } = require('./config/config.json')
 const client = new Discord.Client();
+
+
+
+//lifecheck
+client.on('ready', async () => {
+    client.user.setActivity("Prefix: " + prefix, {
+        type: "PLAYING"
+    });
+    console.log(client.user.username + ` is live.`);
+});
+//bot token
+client.login(token);
