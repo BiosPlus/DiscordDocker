@@ -3,8 +3,7 @@ const Discord = require('discord.js');
 const fs = require("fs");
 const {
     prefix,
-    token,
-    ServerIP
+    token
 } = require('./config/config.json');
 
 
@@ -20,5 +19,6 @@ client.on('ready', async () => {
     });
     console.log(client.user.username + ` is live.`);
 });
-//bot token
+
+//Client live
 client.login(token);
