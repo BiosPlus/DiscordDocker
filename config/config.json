@@ -1,4 +1,4 @@
 {
     "prefix": process.env.DISCORD_PREFIX,
-    "token": process.env.DISCORD_TOKEN
+    "token": process.env.DISCORD_AUTH_TOKEN
 }
