@@ -9,4 +9,6 @@ const {
 
 
 //Start the Client
+const { client } = require('discord.js')
+const { token } = require('./config/config.json')
 const client = new Discord.Client();
