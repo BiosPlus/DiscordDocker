@@ -6,3 +6,7 @@ const {
     token,
     ServerIP
 } = require('./config/config.json');
+
+
+//Start the Client
+const client = new Discord.Client();
