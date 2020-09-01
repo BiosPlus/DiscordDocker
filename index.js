@@ -1,5 +1,8 @@
 // Import the discord.js module
 const Discord = require('discord.js');
+
+//Environment variable reading
+require('dotenv').config();
 const {
     prefix,
     token
