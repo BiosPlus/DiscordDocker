@@ -1,4 +1,4 @@
 {
-    "prefix": ">>",
-    "token": "Please put a discord API token in the config.json"
+    "prefix": process.env.DISCORD_PREFIX,
+    "token": process.env.DISCORD_TOKEN
 }
