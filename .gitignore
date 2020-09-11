@@ -1,1 +1,25 @@
-node_modules
+#Based/sourced from https://github.com/github/gitignore/blob/master/Node.gitignore
+
+#Development files
+.env
+
+#Dependency directories
+node_modules/
+jspm_packages/
+
+#Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+#Optional npm cache directory
+.npm
+
+#Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
