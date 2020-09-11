@@ -16,8 +16,9 @@ client.on('ready', async () => {
 //Client login
 client.login(process.env.DISCORD_AUTH_TOKEN);
 
-//Cycles through function to test build was successful and then shuts down bot (so we don't rack up 1 million github minutes used)
+
 /*
+//Cycles through function to test build was successful and then shuts down bot (so we don't rack up 1 million github minutes used)
 client.on('ready', () => {
 
     const channel = client.channels.cache.get('process.env.DISCORD_BUILD_CHANNEL')
