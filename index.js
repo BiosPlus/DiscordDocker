@@ -13,11 +13,11 @@ const client = new Discord.Client();
 
 client.on('ready', async () => {
     console.log(client.user.username + ` is live.`);
-    console.log(`Currently running in ` + process.env.CURRENT_ENVIRONMENT + ` mode.`);
-    if  (process.env.CURRENT_ENVIRONMENT === `PRODUCTION`){
+    console.log(`Currently running in ` + `process.env.CURRENT_ENVIRONMENT` + ` mode.`);
+    if (process.env.CURRENT_ENVIRONMENT === `PRODUCTION`) {
         console.log(`Ready for Commands`);
     }
-    else if (process.env.CURRENT_ENVIRONMENT === `DEVELOPMENT`){
+    else if (process.env.CURRENT_ENVIRONMENT === `DEVELOPMENT`) {
         console.log(`Ready for commands`);
     }
     else {
