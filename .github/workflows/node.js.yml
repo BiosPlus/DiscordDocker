@@ -33,4 +33,4 @@ jobs:
         DISCORD_AUTH_TOKEN: ${{ secrets.DISCORD_AUTH_TOKEN }}
         #Github Build Variables
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
-        CURRENT_ENVIRONMENT: ${{ secrets.CURRENT_ENVIRONMENT }}
+        CURRENT_ENVIRONMENT: BUILD
