@@ -30,3 +30,4 @@ jobs:
       env:
         DISCORD_COMMAND_PREFIX: ${{ secrets.DISCORD_COMMAND_PREFIX }}
         DISCORD_AUTH_TOKEN: ${{ secrets.DISCORD_AUTH_TOKEN }}
+        DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
