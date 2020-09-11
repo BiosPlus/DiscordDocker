@@ -10,6 +10,7 @@ const client = new Discord.Client();
 //Runs when the client instance is booted.
 client.on('ready', async () => {
     console.log(client.user.username + ` is live.`);
+    client.destroy();
 });
 
 //Client login
