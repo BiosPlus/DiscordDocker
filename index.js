@@ -12,11 +12,11 @@ client.on('ready', async () => {
     let enviro = process.env.CURRENT_ENVIRONMENT;
 
     console.log(client.user.username + ` is live.`);
-    console.log(`Currently running in ` + enviro + ` mode.`);
-    if (enviro === `PRODUCTION`) {
+    console.log(`Currently running in `, enviro, ` mode.`);
+    if (enviro === 'PRODUCTION') {
         console.log(`Ready for Commands`);
     }
-    else if (enviro === `DEVELOPMENT`) {
+    else if (enviro === 'DEVELOPMENT') {
         console.log(`Ready for commands`);
     }
     else {
