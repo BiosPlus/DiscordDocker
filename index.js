@@ -8,16 +8,15 @@ require('dotenv').config();
 const client = new Discord.Client();
 
 //Runs when the client instance is booted depending on the CURRENT_ENVIRONMENT variable.
-
-
-
 client.on('ready', async () => {
+    let enviro = process.env.CURRENT_ENVIRONMENT;
+
     console.log(client.user.username + ` is live.`);
-    console.log(`Currently running in ` + `process.env.CURRENT_ENVIRONMENT` + ` mode.`);
-    if (process.env.CURRENT_ENVIRONMENT === `PRODUCTION`) {
+    console.log(`Currently running in ` + enviro + ` mode.`);
+    if (enviro === `PRODUCTION`) {
         console.log(`Ready for Commands`);
     }
-    else if (process.env.CURRENT_ENVIRONMENT === `DEVELOPMENT`) {
+    else if (enviro === `DEVELOPMENT`) {
         console.log(`Ready for commands`);
     }
     else {
