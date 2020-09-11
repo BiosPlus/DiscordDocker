@@ -13,7 +13,6 @@ client.on('ready', async () => {
 
     console.log(client.user.username + ` is live.`);
     console.log(`Currently running in `, enviro, ` mode.`);
-    console.log(enviro);
     if (enviro === 'PRODUCTION') {
         console.log(`Ready for Commands`);
     }
@@ -22,6 +21,7 @@ client.on('ready', async () => {
     }
     else {
         console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT`);
+        console.log(process.env.CURRENT_ENVIRONMENT);
         client.destroy();
     }
 });
