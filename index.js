@@ -27,12 +27,23 @@ client.on('ready', async () => {
         console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT`);
         if (enviro === 'BUILD') {
             let build_channel_id = process.env.DISCORD_BUILD_CHANNEL;
-            client.channels.cache.get(build_channel_id);
+            const channel = client.channels.cache.get(build_channel_id)
             channel.send(`Build successful.`);
-            client.destroy();
         }
         else {
-            client.destroy();
         }
+        client.destroy();
     }
 });
+
+
+/*
+//Cycles through function to test build was successful and then shuts down bot (so we don't rack up 1 million github minutes used)
+client.on('ready', () => {
+
+    const channel = client.channels.cache.get('process.env.DISCORD_BUILD_CHANNEL')
+    .then(console.log("I AM ALIVE! NOW TESTING TO SEE IF I CAN SEND A SUCCESSFUL MESSAGE!"))
+    .then(channel.send('Build Successful!'))
+    .then(client.destroy());
+});
+*/
