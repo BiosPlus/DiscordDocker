@@ -11,8 +11,6 @@ const client = new Discord.Client();
 client.on('ready', async () => {
     let enviro = process.env.CURRENT_ENVIRONMENT;
 
-    //Client login
-    client.login(process.env.DISCORD_AUTH_TOKEN);
     console.log(client.user.username + ` is live.`);
 
     //What environment are we running in?
@@ -36,6 +34,8 @@ client.on('ready', async () => {
     }
 });
 
+//Client login
+client.login(process.env.DISCORD_AUTH_TOKEN);
 
 /*
 //Cycles through function to test build was successful and then shuts down bot (so we don't rack up 1 million github minutes used)
