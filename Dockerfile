@@ -1,5 +1,5 @@
 #Pull latest node alpine image as a base
-FROM node:latest
+FROM node:alpine
 
 #Dependencies
     #For some reason some node ext's need python
