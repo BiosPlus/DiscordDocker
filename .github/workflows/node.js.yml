@@ -34,3 +34,4 @@ jobs:
         #Github Build Variables
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
+        

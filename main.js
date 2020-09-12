@@ -32,7 +32,7 @@ client.once('ready', () => {
         console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT`);
         if (current_environment === 'BUILD') {
             const channel = client.channels.cache.get(build_channel_id);
-            console.log(`Build successful for node`, process.env.matrix.node-version);
+            console.log(`Build successful for node`, process.version);
             client.destroy();
         }
         else {
