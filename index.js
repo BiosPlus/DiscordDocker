@@ -19,6 +19,7 @@ client.login(discord_auth_token);
 //Runs when the client instance is booted depending on the CURRENT_ENVIRONMENT variable.
 client.once('ready', () => {
     console.log(client.user.username + ` is live.`);
+    console.log(prefix);
 
     //What environment are we running in?
     console.log(`Currently running in `, current_environment, ` mode.`);
