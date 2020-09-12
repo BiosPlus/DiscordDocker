@@ -4,13 +4,18 @@ const Discord = require('discord.js');
 
 //Environment variable reading
 require('dotenv').config();
-const { prefix } = require('./config/config.js');
+const { discord_command_prefix,
+    discord_auth_token,
+    build_channel_id,
+    current_environment } = require('./config/config.js');
 
 //ENV variables
+/*
 const current_environment = process.env.CURRENT_ENVIRONMENT;
 const build_channel_id = process.env.DISCORD_BUILD_CHANNEL;
 const discord_auth_token = process.env.DISCORD_AUTH_TOKEN;
 const discord_command_prefix = process.env.DISCORD_COMMAND_PREFIX;
+*/
 
 //Create a client instance
 const client = new Discord.Client();
