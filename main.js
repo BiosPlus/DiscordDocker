@@ -21,7 +21,7 @@ client.once('ready', () => {
     //What environment are we running in?
     console.log(`Currently running in `, current_environment, ` mode.`);
     if (current_environment === 'PRODUCTION') {
-        console.log(`Ready for Commands`);
+        console.log(`Ready for commands`);
     }
     else if (current_environment === 'DEVELOPMENT') {
         console.log(`Ready for commands`);
