@@ -3,8 +3,8 @@ FROM node:alpine
 
 #Dependencies
     #For some reason some node ext's need python
-    RUN sudo apt-get update
-    RUN sudo apt-get install python && sudo apt-get clean
+    RUN apt-get update
+    RUN apt-get install python && apt-get clean
 
 #Make bot directories
 RUN mkdir -p /app
