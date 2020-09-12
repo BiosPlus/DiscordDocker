@@ -29,7 +29,7 @@ client.once('ready', () => {
         console.log(`Ready for commands`);
     }
     else {
-        console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT`);
+        console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT in .env`);
         if (current_environment === 'BUILD') {
             const channel = client.channels.cache.get(build_channel_id);
             console.log(`Build successful for node`, process.version);
