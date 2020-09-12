@@ -1,6 +1,6 @@
 {
   "name": "discorddocker",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Template for a nodejs discord docker bot",
   "main": "main.js",
   "dependencies": {
@@ -19,10 +19,13 @@
     "type": "git",
     "url": "git+https://github.com/BiosPlus/DiscordDocker.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "biosplus",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/BiosPlus/DiscordDocker/issues"
   },
-  "homepage": "https://github.com/BiosPlus/DiscordDocker#readme"
+  "homepage": "https://github.com/BiosPlus/DiscordDocker#readme",
+  "keywords": [
+    "discord"
+  ]
 }
