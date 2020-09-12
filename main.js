@@ -9,14 +9,6 @@ const { discord_command_prefix,
     build_channel_id,
     current_environment } = require('./config/config.js');
 
-//ENV variables
-/*
-const current_environment = process.env.CURRENT_ENVIRONMENT;
-const build_channel_id = process.env.DISCORD_BUILD_CHANNEL;
-const discord_auth_token = process.env.DISCORD_AUTH_TOKEN;
-const discord_command_prefix = process.env.DISCORD_COMMAND_PREFIX;
-*/
-
 //Create a client instance
 const client = new Discord.Client();
 
@@ -40,7 +32,7 @@ client.once('ready', () => {
         console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT`);
         if (current_environment === 'BUILD') {
             const channel = client.channels.cache.get(build_channel_id);
-            console.log(`Build successful.`);
+            console.log(`Build successful for node`, process.env.matrix.node-version);
             client.destroy();
         }
         else {
