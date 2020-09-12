@@ -28,13 +28,15 @@ client.once('ready', () => {
         console.log(`Ready for commands`);
     }
     else {
-        console.log(`Killing client process. Either in BUILD mode or you have not defined CURRENT_ENVIRONMENT in .env`);
         if (current_environment === 'BUILD') {
-            const channel = client.channels.cache.get(build_channel_id);
+            console.log(`Killing client process. Running in BUILD mode as per CURRENT_ENVIRONMENT in .env`);
+            //const channel = client.channels.cache.get(build_channel_id); // Disabled as we don't want to spam channels yet.
             console.log(`Build successful for node`, process.version);
             client.destroy();
         }
         else {
+            console.log(`Killing client process. You haven't defined a state for CURRENT_ENVIRONMENT in .env`);
+            client.destroy();
         }
     }
 });
