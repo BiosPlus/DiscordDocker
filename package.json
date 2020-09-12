@@ -2,7 +2,7 @@
   "name": "discorddocker",
   "version": "0.5.0",
   "description": "Template for a nodejs discord docker bot",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "bufferutil": "^4.0.1",
     "discord.js": "^12.3.1",
