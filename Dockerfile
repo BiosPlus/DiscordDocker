@@ -1,6 +1,11 @@
 #Pull latest node alpine image as a base
 FROM node:alpine
 
+#Dependencies
+    #For some reason some node ext's need python
+    RUN sudo apt-get update
+    RUN sudo apt-get install python && sudo apt-get clean
+
 #Make bot directories
 RUN mkdir -p /app
 WORKDIR /app
