@@ -35,5 +35,6 @@ jobs:
           push: true
           tags: |
             biosplus/discorddocker:latest
+            biosplus/discorddocker:stable
             biosplus/discorddocker:1.0.0-stable
             biosplus/discorddocker:1.0.0
