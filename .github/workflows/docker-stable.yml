@@ -6,7 +6,7 @@ on:
             - master
 
 jobs:
-  ARM64 and AMD64 builds:
+  ARM64_AMD64-builds:
     runs-on: ubuntu-latest
     steps:
       -
