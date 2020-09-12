@@ -1,9 +1,10 @@
 // Import the discord.js module
 const Discord = require('discord.js');
-const { config } = require('dotenv/types');
+//const { config } = require('dotenv/types');
 
 //Environment variable reading
 require('dotenv').config();
+const { prefix } = require('./config/config.js');
 
 //ENV variables
 const current_environment = process.env.CURRENT_ENVIRONMENT;
