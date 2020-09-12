@@ -5,7 +5,7 @@ on:
     branches: master
 
 jobs:
-  multi:
+  ARM64 and AMD64 builds:
     runs-on: ubuntu-latest
     steps:
       -
