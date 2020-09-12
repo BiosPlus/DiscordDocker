@@ -1,8 +1,9 @@
-name: Docker Bleeding CI (Multiplatform)
+name: Docker Stable CI (Multiplatform)
 
-on:
-  push:
-    branches: master
+on: 
+    release:
+          branches:
+            - master
 
 jobs:
   multi:
@@ -33,5 +34,6 @@ jobs:
           #All platforms: platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: true
           tags: |
-            biosplus/discorddocker:bleeding
-            biosplus/discorddocker:1.0.0-bleeding
+            biosplus/discorddocker:latest
+            biosplus/discorddocker:1.0.0-stable
+            biosplus/discorddocker:1.0.0

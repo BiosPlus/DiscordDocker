@@ -1,8 +1,8 @@
-name: Docker Bleeding CI (Multiplatform)
+name: Docker Nightly CI (Multiplatform)
 
-on:
-  push:
-    branches: master
+on: 
+    schedule:
+          - cron: '0 0 * * *'
 
 jobs:
   multi:
@@ -33,5 +33,5 @@ jobs:
           #All platforms: platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: true
           tags: |
-            biosplus/discorddocker:bleeding
-            biosplus/discorddocker:1.0.0-bleeding
+            biosplus/discorddocker:nightly
+            biosplus/discorddocker:1.0.0-nightly
