@@ -12,7 +12,8 @@ WORKDIR /app
 
 #Copy package.json and install the bot
 COPY package.json /app
-RUN npm install
+RUN npm install -g pnpm
+RUN pnpm install
 
 #Copy the rest of the bot to the dir
 COPY . /app
