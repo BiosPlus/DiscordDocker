@@ -7,3 +7,6 @@ Template for a nodejs discord docker bot
 
 ### Q: How well does she science?
 #### A: very very well!
+
+### Q: Do I still use node/npm?
+#### A: This utilizes PNPM as the package manager.
