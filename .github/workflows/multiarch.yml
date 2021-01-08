@@ -9,28 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: 14
+        node-version: [14]
     steps:
-    - 
-      name: Display job name
+    - name: Display job name
       run: echo NodeJS_Build_Test_${{ matrix.node-version }}
       shell: bash
-    -
-      name: Checkout
-      uses: actions/checkout@v2
-    - 
-      name: Install + Setup PNPM
+    - uses: actions/checkout@v2
+    - name: Install + Setup PNPM
       uses: pnpm/action-setup@v1.2.1
       with:
         version: 5
         run_install: true
-    -
-      name: Install Node.js ${{ matrix.node-version }}
+    - name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      - run: pnpm run build --if-present
-      - run: node main.js
+    - run: pnpm run build --if-present
+    - run: node main.js
       env:
         #Discord required variables
         DISCORD_COMMAND_PREFIX: ${{ secrets.DISCORD_COMMAND_PREFIX }}
