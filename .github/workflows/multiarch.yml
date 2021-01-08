@@ -30,7 +30,7 @@ jobs:
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
   Build_Push:
-    needs: NodeJS_Build_Test
+    needs: [NodeJS_Build_Test (12.x), NodeJS_Build_Test (14.x), NodeJS_Build_Test (15.x)]
     runs-on: ubuntu-latest
     steps:
     -
