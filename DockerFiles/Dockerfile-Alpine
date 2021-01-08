@@ -1,5 +1,6 @@
 #Pull latest node alpine image as a base
-FROM node:lts
+ARG NODE-IMG
+FROM node:$NODE-IMG
 
 LABEL maintainer="BiosPlus"
 
@@ -9,8 +10,8 @@ ARG BUILD_DATE
 
 #Dependencies
     #For some reason some node ext's need python
-    RUN apt-get update
-    RUN apt-get install python && apt-get clean
+    RUN apj update
+    RUN apk add python
 
 #Make bot directories
 RUN mkdir -p /app

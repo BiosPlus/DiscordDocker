@@ -110,7 +110,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./Dockerfiles/Dockerfile
+        file: ./DockerFiles/Dockerfile
         platforms: ${{ steps.prepare.outputs.docker_platforms }}
         push: true
         build-args: |
