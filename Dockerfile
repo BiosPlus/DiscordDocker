@@ -1,5 +1,5 @@
 #Pull latest node alpine image as a base
-FROM node:latest
+FROM node:14-slim
 
 LABEL maintainer="BiosPlus"
 
