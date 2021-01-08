@@ -29,8 +29,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      run: pnpm run build --if-present
-      run: node main.js
+      - run: pnpm run build --if-present
+      - run: node main.js
       env:
         #Discord required variables
         DISCORD_COMMAND_PREFIX: ${{ secrets.DISCORD_COMMAND_PREFIX }}
