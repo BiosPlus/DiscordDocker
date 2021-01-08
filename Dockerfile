@@ -1,5 +1,5 @@
 #Pull latest node alpine image as a base
-FROM node:lts-slim
+FROM node:lts
 
 LABEL maintainer="BiosPlus"
 
