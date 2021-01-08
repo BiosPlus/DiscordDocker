@@ -17,7 +17,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 #Add build info
-RUN echo -e "Build Info\: \nBranch\:\t${BRANCH}\nCommit\:\t${COMMIT}\nBuild Date\:\t${BUILD_DATE}" > /app/buildinfo.txt && \ 
+RUN echo -e "Build Info\: \nBranch:\t${BRANCH}\nCommit:\t${COMMIT}\nBuild Date:\t${BUILD_DATE}" > /app/buildinfo.txt && \ 
     cat /app/buildinfo.txt
 
 #Copy package.json and install the bot
