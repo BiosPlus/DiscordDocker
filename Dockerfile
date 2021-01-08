@@ -1,6 +1,12 @@
 #Pull latest node alpine image as a base
 FROM node:latest
 
+LABEL maintainer="BiosPlus"
+
+ARG BRANCH
+ARG COMMIT
+ARG BUILD_DATE
+
 #Dependencies
     #For some reason some node ext's need python
     RUN apt-get update
@@ -9,6 +15,9 @@ FROM node:latest
 #Make bot directories
 RUN mkdir -p /app
 WORKDIR /app
+
+#Add build info
+RUN echo -e "Build Info\: \nBranch\:\t${BRANCH}\nCommit\:\t${COMMIT}\nBuild Date\:\t${BUILD_DATE}" > /app/buildinfo.txt
 
 #Copy package.json and install the bot
 COPY package.json /app
