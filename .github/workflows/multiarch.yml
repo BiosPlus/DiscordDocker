@@ -11,11 +11,15 @@ jobs:
       matrix:
         node-version: [14]
     steps:
-    - name: Display job name
+    - 
+      name: Display job name
       run: echo NodeJS_Build_Test_${{ matrix.node-version }}
       shell: bash
-    - uses: actions/checkout@v2
-    - name: Install + Setup PNPM
+    - 
+      name: Checkout
+      uses: actions/checkout@v2
+    - 
+      name: Install + Setup PNPM
       uses: pnpm/action-setup@v1.2.1
       with:
         version: 5
