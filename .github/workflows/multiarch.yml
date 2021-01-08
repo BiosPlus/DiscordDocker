@@ -114,7 +114,7 @@ jobs:
         platforms: ${{ steps.prepare.outputs.docker_platforms }}
         push: true
         build-args: |
-            NODE-IMG=lts
+            NODE_IMG=lts
             TAG=${{ steps.prepare.outputs.tag }}
             BRANCH=${{ steps.prepare.outputs.branch }}
             COMMIT=${{ steps.prepare.outputs.commit }}
@@ -122,25 +122,5 @@ jobs:
         tags: |
             ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.tag }}
             ghcr.io/${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.tag }}
-        cache-from: type=local,src=/tmp/.buildx-cache
-        cache-to: type=local,dest=/tmp/.buildx-cache
-    - 
-      name: Docker Build Alpine
-      id: docker_build_alpine
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: ./DockerFiles/Dockerfile-Alpine
-        platforms: ${{ steps.prepare.outputs.docker_platforms }}
-        push: true
-        build-args: |
-            NODE-IMG=lts-alpine
-            TAG=${{ steps.prepare.outputs.tag }}
-            BRANCH=${{ steps.prepare.outputs.branch }}
-            COMMIT=${{ steps.prepare.outputs.commit }}
-            BUILD_DATE=${{ steps.prepare.outputs.build_date }}
-        tags: |
-            ${{ steps.prepare.outputs.docker_image }}:alpine
-            ghcr.io/${{ steps.prepare.outputs.docker_image }}:alpine
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
