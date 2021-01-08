@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * 2'
 jobs:
   NodeJS_Build_Test:
-    name: NodeJS_Build_Test_${{ matrix.node-version }}
+    name: NodeJS_Build_Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
         CURRENT_ENVIRONMENT: BUILD
   Build_Push:
     name: Build Push
-    needs: NodeJS_Build_Test_12.x
+    needs: NodeJS_Build_Test
     runs-on: ubuntu-latest
     steps:
     -
