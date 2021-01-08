@@ -24,7 +24,8 @@ jobs:
       with:
         version: 5
         run_install: true
-    - name: Install Node.js ${{ matrix.node-version }}
+    - 
+      name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
