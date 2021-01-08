@@ -10,7 +10,9 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
-    - script: echo NodeJS_Build_Test_${{ matrix.node-version }}
+    - name: Display job name
+      run: echo NodeJS_Build_Test_${{ matrix.node-version }}
+      shell: bash
     - uses: actions/checkout@v2
     - name: Install + Setup PNPM
       uses: pnpm/action-setup@v1.2.1
@@ -31,7 +33,7 @@ jobs:
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
   Build_Push:
-    needs: [NodeJS_Build_Test (12.x), NodeJS_Build_Test (14.x), NodeJS_Build_Test (15.x)]
+    needs: [NodeJS_Build_Test]
     runs-on: ubuntu-latest
     steps:
     -
