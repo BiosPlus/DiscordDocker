@@ -1,6 +1,6 @@
 #Pull latest node alpine image as a base
-ARG NODE-IMG
-FROM node:${NODE-IMG}
+ARG NODE_IMG
+FROM node:lts
 
 LABEL maintainer="BiosPlus"
 
