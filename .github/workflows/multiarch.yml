@@ -4,7 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * 2'
 jobs:
-  NodeJS_Build_Test_${{ matrix.node-version }}:
+  NodeJS_Build_Test:
+    name: NodeJS_Build_Test_${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,7 +34,6 @@ jobs:
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
   Build_Push:
-    needs: [NodeJS_Build_Test]
     runs-on: ubuntu-latest
     steps:
     -
