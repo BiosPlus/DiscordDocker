@@ -114,7 +114,7 @@ jobs:
         platforms: ${{ steps.prepare.outputs.docker_platforms }}
         push: true
         build-args: |
-            NODE-IMG=LTS
+            NODE-IMG=lts
             TAG=${{ steps.prepare.outputs.tag }}
             BRANCH=${{ steps.prepare.outputs.branch }}
             COMMIT=${{ steps.prepare.outputs.commit }}
@@ -134,7 +134,7 @@ jobs:
         platforms: ${{ steps.prepare.outputs.docker_platforms }}
         push: true
         build-args: |
-            NODE-IMG=14-apline
+            NODE-IMG=lts-alpine
             TAG=${{ steps.prepare.outputs.tag }}
             BRANCH=${{ steps.prepare.outputs.branch }}
             COMMIT=${{ steps.prepare.outputs.commit }}
