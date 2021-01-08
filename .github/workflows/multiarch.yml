@@ -34,7 +34,8 @@ jobs:
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
   Build_Push:
-    needs: [NodeJS_Build_Test_${{ matrix.node-version }}]
+    name: Build Push
+    needs: NodeJS_Build_Test_${{ matrix.node-version }}
     runs-on: ubuntu-latest
     steps:
     -
