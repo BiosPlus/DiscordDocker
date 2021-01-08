@@ -37,6 +37,9 @@ jobs:
     name: Build Push
     needs: NodeJS_Build_Test_${{ matrix.node-version }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
     -
       name: Checkout
