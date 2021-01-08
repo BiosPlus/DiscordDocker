@@ -62,7 +62,7 @@ jobs:
 
         echo ::set-output name=commit::${GITHUB_SHA}
         echo ::set-output name=build_date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-        echo ::set-output name=docker_platforms::linux/amd64,linux/arm/v6
+        echo ::set-output name=docker_platforms::linux/amd64
         echo ::set-output name=docker_image::${{ secrets.DOCKER_USERNAME }}/discorddocker
     -
       name: Set up QEMU

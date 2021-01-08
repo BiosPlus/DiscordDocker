@@ -1,7 +1,11 @@
 #Pull latest node alpine image as a base
-FROM node:latest
+FROM node:alpine
 
 #Dependencies
+    #Add bash
+    RUN apk update
+    RUN apk upgrade
+    RUN apk add bash
     #For some reason some node ext's need python
     RUN apt-get update
     RUN apt-get install python && apt-get clean
