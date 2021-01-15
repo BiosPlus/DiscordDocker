@@ -6,10 +6,19 @@ on:
 jobs:
   NodeJS_Build_Test:
     name: NodeJS_Build_Test
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [10, 12, 14]
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+        node-version:
+          - 10
+          - 12
+          - 14
+        architecture:
+          - x64
     steps:
     - 
       name: Display job name
@@ -26,9 +35,10 @@ jobs:
         run_install: true
     - 
       name: Install Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        architecture: ${{ matrix.architecture }}
     - run: pnpm run build --if-present
     - run: node main.js
       env:
@@ -38,6 +48,7 @@ jobs:
         #Github Build Variables
         DISCORD_BUILD_CHANNEL: ${{ secrets.DISCORD_BUILD_CHANNEL }}
         CURRENT_ENVIRONMENT: BUILD
+
   Build_Push:
     name: Build Push
     needs: NodeJS_Build_Test
@@ -110,7 +121,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./DockerFiles/Dockerfile
+        file: ./DockerFiles/Alpine/Dockerfile
         platforms: ${{ steps.prepare.outputs.docker_platforms }}
         push: true
         build-args: |
