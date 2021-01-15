@@ -8,6 +8,7 @@ jobs:
     name: NodeJS_Build_Test
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
