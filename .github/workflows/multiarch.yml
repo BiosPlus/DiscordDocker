@@ -1,4 +1,4 @@
-name: Docker Build Images (MultiArch)
+name: Docker Build Images (MultiArch - SelfHosted)
 on:
   push:
   schedule:
