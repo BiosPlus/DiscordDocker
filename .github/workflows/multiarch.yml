@@ -12,25 +12,15 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          # - windows-latest
-          # - macos-latest
+          - windows-latest
+          - macos-latest
         node-version:
-          - 10
+        #  - 10 # no longer supported, use at own risk
           - 12
           - 14
         architecture:
           - x64
-          - x86
-          - arm64
-          - armv6l
-          - armv7l
-          - ppc64le
-          - s390x
     steps:
-    - 
-      name: Display job name
-      run: echo NodeJS_Build_Test_${{ matrix.node-version }}
-      shell: bash
     - 
       name: Checkout
       uses: actions/checkout@v2
