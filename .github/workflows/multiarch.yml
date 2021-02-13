@@ -24,19 +24,19 @@ jobs:
     - 
       name: Checkout
       uses: actions/checkout@v2
-    - 
-      name: Install + Setup PNPM
-      uses: pnpm/action-setup@v1.2.1
-      with:
-        version: 5
-        run_install: true
+    # - Currently broken on selfhosted
+    #   name: Install + Setup PNPM
+    #   uses: pnpm/action-setup@v1.2.1
+    #   with:
+    #     version: 5
+    #     run_install: true
     - 
       name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         architecture: ${{ matrix.architecture }}
-    - run: pnpm run build --if-present
+    - run: npm run build --if-present
     - run: node main.js
       env:
         #Discord required variables
